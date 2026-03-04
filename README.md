@@ -54,6 +54,13 @@ uv build
 
 ビルド成果物（sdist / wheel）は `dist/` に出力されます。
 
+## インストール（利用者向け）
+
+```bash
+# GitHub リポジトリからインストール
+uv add git+https://github.com/<owner>/<repo>.git
+```
+
 ## テスト
 
 ```bash
