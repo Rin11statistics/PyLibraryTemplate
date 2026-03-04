@@ -8,7 +8,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # テンプレートのデフォルトパッケージ名
-TEMPLATE_NAME = "pyapplicationtemplate"
+TEMPLATE_NAME = "pylibrarytemplate"
 
 
 def initialize_project(project_name: str) -> None:
@@ -40,16 +40,7 @@ def initialize_project(project_name: str) -> None:
         encoding="utf-8",
     )
 
-    # 3. main*.py 内のインポート文を置換
-    for main_file in PROJECT_ROOT.glob("main*.py"):
-        content = main_file.read_text(encoding="utf-8")
-        if TEMPLATE_NAME in content:
-            main_file.write_text(
-                content.replace(TEMPLATE_NAME, project_name),
-                encoding="utf-8",
-            )
-
-    # 4. README.md をプロジェクト名のタイトルのみにリセット
+    # 3. README.md をプロジェクト名のタイトルのみにリセット
     readme = PROJECT_ROOT / "README.md"
     readme.write_text(f"# {project_name}\n", encoding="utf-8")
 
