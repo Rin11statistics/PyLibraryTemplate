@@ -1,5 +1,5 @@
 def main():
-    print("Hello from pyapplicationtemplate!")
+    print("Hello from pylibrarytemplate!")
 
 
 if __name__ == "__main__":
